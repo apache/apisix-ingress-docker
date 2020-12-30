@@ -4,7 +4,7 @@
 
 ```
 export INGRESS_VERSION=0.1.0
-$ docker build -t apisix-ingress-controller:${INGRESS_VERSION} --build-arg APISIX_VERSION=${APISIX_VERSION} .
+$ docker build -t apisix-ingress-controller:${INGRESS_VERSION} --build-arg INGRESS_VERSION=${INGRESS_VERSION} .
 ```
 
 ## How to deploy 

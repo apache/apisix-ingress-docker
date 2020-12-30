@@ -24,7 +24,7 @@ RUN rm -rf /etc/localtime \
 
 WORKDIR /build
 RUN wget https://github.com/apache/apisix-ingress-controller/archive/${INGRESS_VERSION}.tar.gz \
-    && tar zxvf apisix-ingress-controller-${INGRESS_VERSION}.tar.gz \
+    && tar zxvf ${INGRESS_VERSION}.tar.gz \
     && ln -s apisix-ingress-controller-${INGRESS_VERSION} controller \
     && cd ./controller \
     && GOPROXY=https://goproxy.io,direct make build
