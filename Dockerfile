@@ -29,7 +29,7 @@ RUN wget https://github.com/apache/apisix-ingress-controller/archive/${INGRESS_V
     && cd ./controller \
     && GOPROXY=https://goproxy.io,direct make build
 
-FROM alpine:3.12.1
+FROM alpine:3.13.5
 
 WORKDIR /ingress-apisix
 RUN apk add --no-cache ca-certificates libc6-compat \
