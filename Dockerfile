@@ -16,7 +16,7 @@
 #
 FROM golang:1.13.8 AS build-env
 
-ARG INGRESS_VERSION=0.1.0
+ARG INGRESS_VERSION=1.3.0
 LABEL ingress_version="${INGRESS_VERSION}"
 RUN rm -rf /etc/localtime \
     && ln -s /usr/share/zoneinfo/Hongkong /etc/localtime \
