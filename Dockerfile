@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM golang:1.16 AS build-env
+FROM golang:1.18 AS build-env
 
-ARG INGRESS_VERSION=1.4.0
+ARG INGRESS_VERSION=1.5.0-rc1
 ARG ENABLE_PROXY=false
 
 LABEL ingress_version="${INGRESS_VERSION}"
@@ -32,7 +32,7 @@ RUN wget https://github.com/apache/apisix-ingress-controller/archive/${INGRESS_V
     && if [ "$ENABLE_PROXY" = "true" ] ; then go env -w GOPROXY=https://goproxy.cn,direct ; fi \
     && make build
 
-FROM alpine:3.13.5
+FROM alpine:3.16.1
 
 WORKDIR /ingress-apisix
 RUN apk add --no-cache ca-certificates libc6-compat \
